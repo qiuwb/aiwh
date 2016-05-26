@@ -1,0 +1,23 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       Application.index
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+
+*           /admin/{controller}/{action}         admin.{controller}.{action}
+*           /advertiser/{controller}/{action}    advertiser.{controller}.{action}
+*           /app/{controller}/{action}           app.{controller}.{action}
+*           /govaffair/{controller}/{action}     govaffair.{controller}.{action}
+*           /merchant/{controller}/{action}      merchant.{controller}.{action}
+*           /sysfunc/{controller}/{action}       sysfunc.{controller}.{action}
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}
